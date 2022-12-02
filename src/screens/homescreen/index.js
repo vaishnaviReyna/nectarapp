@@ -1,23 +1,39 @@
-import { View, Text,Image} from 'react-native'
+import {View, Text, Image, Pressable,ScrollView} from 'react-native';
 import React from 'react';
-import styles from "./styles";
-import  {logo} from "../../constants/Icons"
-
-const HomeScreen = ({ navigation }) => {
+import styles from './styles';
+import Images from '../../constants/Images';
+import Input from '../../components/input';
+import Button from '../../components/button';
+import  {Exclusive} from '../../constants/Data';
+import Card from '../../components/card';
+const HomeScreen = ({navigation}) => {
+ 
+  
   return (
     <View style={styles.mainContainer}>
-        <View style={styles.logo}>
-        <Text style={styles.title}>nectar</Text>
-        <Text style={styles.subTitle}>online groceris</Text>
+       <ScrollView>
+        <View>
+        <Image source={Images.banner} />
+        </View>
+      
+      <View>
+        <View style={styles.itemTitle}>
+        <Text style={styles.title}>Exclusive Offer</Text>
+        <Text style={styles.subTitle}>See all</Text>
         </View>
 
-      {/* <Text>Nectar</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('welcome_screen')}
-      /> */}
+        <View style={{flex:1,flexDirection:"row",flexWrap:"wrap"}}>
+        {
+          Exclusive.map((i)=>
+          <Card title={i.label} price={i.price} img={i.img} />
+          )}
+       
+        </View>
+       
+      </View>
+      </ScrollView>
     </View>
-  )
-}
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;

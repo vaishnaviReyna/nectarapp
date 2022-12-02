@@ -1,29 +1,27 @@
-import {StyleSheet } from 'react-native';
- import colors from '../../constants/Colors';
+import {StyleSheet} from 'react-native';
+import colors from '../../constants/Colors';
 import FontSize from '../../constants/FontSize';
-
 
 const styles = StyleSheet.create({
   mainContainer: {
-  backgroundColor:colors.green,
-  flex:1,
-
+    flex: 1,
+    paddingHorizontal:15,
   },
-  logo:{
-    flex:1,
-    alignItems:"center",
-    justifyContent:"center",
-    
-  },
-  title:{
-    fontSize:FontSize.XXXXLarge+30,
-    color:colors.white,
+  title: {
+    fontSize: FontSize.medium +2,
+    color: colors.black,
+    fontWeight:"500",
   },
   subTitle:{
-    color:colors.white,
-    fontSize:FontSize.XXSmall,
-    letterSpacing:4,
-    lineHeight:11
+    color: colors.green,
+    marginTop:5,
+    fontWeight:"bold",
+  },
+  itemTitle:{
+    flexDirection:"row",
+    justifyContent:"space-between",
+    marginBottom:5,
   }
-})
+ 
+});
 export default styles;
