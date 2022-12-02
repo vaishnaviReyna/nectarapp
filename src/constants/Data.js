@@ -29,4 +29,10 @@ export const Exclusive = [
     price: '5.14',
     img: require('../assets/images/chili.png'),
   },
+  {
+    id: 5,
+    label: 'Strawberry',
+    price: '5.14',
+    img: require('../assets/images/strawberry.png'),
+  },
 ];

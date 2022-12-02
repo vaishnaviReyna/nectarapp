@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
     paddingVertical:5,
     marginRight:25,
     marginBottom:10,
-    borderWidth:1,
   },
   logo:{
   alignItems:"center",
