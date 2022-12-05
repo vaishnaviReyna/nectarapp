@@ -27,11 +27,11 @@ const SignupScreen = ({navigation}) => {
       <View>
       <Text style={styles.fpass}>Forgot Password?</Text>
       </View>
-      <Button title="Log In" buttonPress={() => navigation.navigate('home_screen')}/>
+      <Button title="Log In" buttonPress={() => navigation.navigate('tab_screen')}/>
       
       <View style={styles.bottomText}>
       <Text>Don't have an account?</Text> 
-      <Pressable onPress={()=> navigation.navigate('home_screen')}>
+      <Pressable onPress={()=> navigation.navigate('tab_screen')}>
         <Text style={styles.signText}>Signup</Text>
       </Pressable>
       </View>

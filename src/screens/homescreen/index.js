@@ -1,70 +1,93 @@
-import {View, Text, Image, Pressable,ScrollView} from 'react-native';
-import React, { useState } from 'react';
+import {View, Text, Image, Pressable, SafeAreaView ,FlatList,ScrollView} from 'react-native';
+import React, {useState} from 'react';
 import styles from './styles';
 import Images from '../../constants/Images';
-import Input from '../../components/input';
-import Button from '../../components/button';
-import  {Exclusive} from '../../constants/Data';
+import {Exclusive,Groceries} from '../../constants/Data';
 import Card from '../../components/card';
+
+
 const HomeScreen = ({navigation}) => {
- const [extab,setExtab]=useState(true);
-  
+  const [extab, setExtab] = useState(true);
+  const [groceriestab,setGroceriestab]=useState(true);
+
+  let numColumns=2;
+  const renderItem = ({ item }) => (
+    <Card title={item.label} price={item.price} img={item.img} onpress={()=> abc(item)}/>
+  );
+
+  const abc = (item) =>{
+    console.log("item",item);
+    navigation.navigate('basket_screen', item)}
+
   return (
     <View style={styles.mainContainer}>
-       <ScrollView>
+      <SafeAreaView>
+      <ScrollView>
         <View>
-        <Image source={Images.banner} />
+          <Image source={Images.banner} />
         </View>
-      
-      <View>
-        <View style={styles.itemTitle}>
-        <Text style={styles.title}>Exclusive Offer</Text>
-        <Pressable onPress={()=> setExtab(false)}>
-        <Text style={styles.subTitle}>See all</Text>
-        </Pressable>
+        <View>
+          <View style={styles.itemTitle}>
+            <Text style={styles.title}>Exclusive Offer</Text>
+            <Pressable onPress={() => setExtab(false)}>
+              <Text style={styles.subTitle}>See all</Text>
+            </Pressable>
+          </View>
+
+          <View>
+            {extab ? (
+              <View>
+                  <FlatList
+                  data={Exclusive.slice(0, 2)}
+                  renderItem={renderItem}
+                   numColumns={numColumns}
+                  keyExtractor={item => item.id}
+                />
+              </View>
+            ) : (
+              <View>
+                 <FlatList
+                  data={Exclusive}
+                  renderItem={renderItem}
+                  numColumns={numColumns}
+                  keyExtractor={item => item.id}
+                />
+              </View>
+            )}
+          </View>
         </View>
+        <View>
+          <View style={styles.itemTitle}>
+            <Text style={styles.title}>Groceries</Text>
+            <Pressable onPress={() => setGroceriestab(false)}>
+              <Text style={styles.subTitle}>See all</Text>
+            </Pressable>
+          </View>
 
-        <View >
-          {extab ?<View style={{flex:1,flexDirection:"row",flexWrap:"wrap"}}>
-            { 
-          (Exclusive.slice(0,2)).map((i)=>
-          <Card title={i.label} price={i.price} img={i.img} />
-          )}
-            </View>:<View style={{flex:1,flexDirection:"row",flexWrap:"wrap"}}>
-            { 
-          Exclusive.map((i)=>
-          <Card title={i.label} price={i.price} img={i.img} />
-          )}
-            </View>
-
-          }
-       </View>
-      </View>
-      {/* <View>
-        <View style={styles.itemTitle}>
-        <Text style={styles.title}>Best Selling</Text>
-        <Pressable onPress={()=> setExtab(false)}>
-        <Text style={styles.subTitle}>See all</Text>
-        </Pressable>
+          <View>
+            {groceriestab ? (
+              <View>
+                  <FlatList
+                  data={Groceries.slice(0, 2)}
+                  renderItem={renderItem}
+                   numColumns={numColumns}
+                  keyExtractor={item => item.id}
+                />
+              </View>
+            ) : (
+              <View>
+                 <FlatList
+                  data={Groceries}
+                  renderItem={renderItem}
+                  numColumns={numColumns}
+                  keyExtractor={item => item.id}
+                />
+              </View>
+            )}
+          </View>
         </View>
-
-        <View >
-          {extab ?<View style={{flex:1,flexDirection:"row",flexWrap:"wrap"}}>
-            { 
-          (Exclusive.slice(0,2)).map((i)=>
-          <Card title={i.label} price={i.price} img={i.img} />
-          )}
-            </View>:<View style={{flex:1,flexDirection:"row",flexWrap:"wrap"}}>
-            { 
-          Exclusive.map((i)=>
-          <Card title={i.label} price={i.price} img={i.img} />
-          )}
-            </View>
-
-          }
-       </View>
-      </View> */}
-      </ScrollView>
+        </ScrollView>
+      </SafeAreaView>
     </View>
   );
 };

@@ -6,7 +6,9 @@ import SigninScreen from '../screens/signinscreen';
 import LoginScreen from '../screens/loginscreen';
 import SignupScreen from '../screens/signupscreen';
 import SpalshScreen from '../screens/spalshscreen';
-import HomeScreen from '../screens/homescreen';
+import TabNavigation from './TabNavigation';
+import BasketScreen from '../screens/basketscreen';
+import OrderScreen from '../screens/orderscreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -19,9 +21,9 @@ const HomeNavigation = () => {
       <Stack.Screen name="signin_screen" component={SigninScreen} />
       <Stack.Screen name="login_screen" component={LoginScreen} />
       <Stack.Screen name="signup_screen" component={SignupScreen} />
-      <Stack.Screen name="home_screen" component={HomeScreen} />
-      
-      
+      <Stack.Screen name="tab_screen" component={TabNavigation} options= {{ headerShown: false }}/>
+      <Stack.Screen name="basket_screen" component={BasketScreen} />
+      <Stack.Screen name="order_screen" component={OrderScreen} />
     </Stack.Navigator>
   </NavigationContainer>
   )
