@@ -11,6 +11,10 @@ const Icons = {
     gmin:require('../assets/icons/greenmin.png'),
     redHeart:require('../assets/icons/redHeart.png'),
     close:require('../assets/icons/close.png'),
+    pen:require('../assets/icons/pen.png'),
+    search:require('../assets/icons/search.png'),
+    backIcon:require('../assets/icons/backIcon.png'),
+    filter:require('../assets/icons/filter.png'),
   };
 
   export default Icons;

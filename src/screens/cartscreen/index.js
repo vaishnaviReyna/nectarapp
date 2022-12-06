@@ -8,19 +8,18 @@ import Icons from '../../constants/Icons';
 
 const CartScreen = ({navigation, route}) => {
   const{id,label,img,count,price} = route.params;
-  const[cartValue,SetCartValue]=useState(count.count);
+  const[cartValue,SetCartValue]=useState(count);
   const[tab,SetTab]=useState(true);
   const [isModalVisible, setModalVisible] = useState(false);
 
   const toggleModal = () => {
-    console.log("nbhg");
     setModalVisible(!isModalVisible);
   };
 
   return (
     <View style={styles.container}>
-      <View>
-      {tab?<Cart title={label.label} price={price.price * cartValue } img={img.img} count={cartValue}
+       <View>
+      {tab?<Cart title={label} price={price * cartValue} img={img} count={cartValue}
        pressPlus={()=>SetCartValue(cartValue + 1)}
       pressMin={()=>SetCartValue(cartValue - 1)}
       onclose={()=>SetTab(false)}/>:<></>
@@ -72,7 +71,7 @@ const CartScreen = ({navigation, route}) => {
             <View style={styles.modelTitle}>
       <Text>Total Cost</Text>
       <View style={styles.modelTitle}>
-      <Text style={styles.bold}>${price.price * cartValue } </Text>
+      <Text style={styles.bold}>${price * cartValue } </Text>
       <Image source={Icons.rightArrow} style={styles.arrow}/>
       </View>
     
@@ -86,7 +85,7 @@ const CartScreen = ({navigation, route}) => {
         </View>
       </Modal>
 
-      </View>
+      </View> 
      
     </View>
   )

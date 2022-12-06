@@ -9,7 +9,8 @@ import SpalshScreen from '../screens/spalshscreen';
 import TabNavigation from './TabNavigation';
 import BasketScreen from '../screens/basketscreen';
 import OrderScreen from '../screens/orderscreen';
-
+import ExploreItemScreen from '../screens/exploreItemscreen';
+import FilterScreen from '../screens/filterscreen';
 
 const Stack = createNativeStackNavigator();
 const HomeNavigation = () => {
@@ -24,6 +25,8 @@ const HomeNavigation = () => {
       <Stack.Screen name="tab_screen" component={TabNavigation} options= {{ headerShown: false }}/>
       <Stack.Screen name="basket_screen" component={BasketScreen} />
       <Stack.Screen name="order_screen" component={OrderScreen} />
+      <Stack.Screen name="exploreitem_screen" component={ExploreItemScreen} />
+      <Stack.Screen name="filter_screen" component={FilterScreen} />
     </Stack.Navigator>
   </NavigationContainer>
   )

@@ -28,6 +28,12 @@ const styles = StyleSheet.create({
   },
   btnTitle:{
     color:colors.black
+  },
+  bottom:{
+    position:"absolute",
+    bottom:10,
+    width:"100%",
+    marginHorizontal:10,
   }
     
  

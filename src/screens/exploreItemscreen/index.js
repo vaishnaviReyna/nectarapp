@@ -1,0 +1,85 @@
+import {
+  View,
+  SafeAreaView,
+  FlatList,
+  Image,
+  ScrollView,
+  Pressable
+} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import styles from './styles';
+import icons from '../../constants/Icons';
+import Card from '../../components/card';
+import Input from '../../components/input';
+
+
+const ExploreItemScreen = ({navigation, route}) => {
+  const {list} = route.params;
+  const [search, setSearch] = useState('');
+  const [filteredDataSource, setFilteredDataSource] = useState([]);
+
+
+  useEffect(() => {
+    setFilteredDataSource(list);
+  }, []);
+
+  const searchFilterFunction = (text) => {
+    setSearch(text);
+   
+    if (text) {
+      const newData = list.filter(
+        function (item) {
+          const itemData = item.label
+            ? item.label.toUpperCase()
+            : ''.toUpperCase();
+          const textData = text.toUpperCase();
+          return itemData.indexOf(textData) > -1;
+      });
+      setFilteredDataSource(newData);
+      setSearch(text);
+    } else {
+      setFilteredDataSource(list);
+      setSearch(text);
+    }
+
+  };
+  let numColumns = 2;
+  const renderItem = ({item}) => (
+    <Card
+      title={item.label}
+      price={item.price}
+      img={item.img}
+      onpress={() => navigation.navigate('basket_screen', item)}
+    />
+  );
+
+  return (
+    <View style={styles.mainContainer}>
+      <SafeAreaView>
+        <ScrollView>
+        <Image source={icons.search} style={styles.logo} />
+        <Input onChangeText ={(text) => searchFilterFunction(text)}
+        value={search}
+        placeholder="Search Store"
+        leftIcon=""
+        telcode=""
+        style={styles.input}
+        />
+        <Pressable onPress={()=>navigation.navigate('filter_screen',{newData:list})}>
+        <Image source={icons.filter} style={styles.logoFilter} />
+        </Pressable>
+          <View>
+            <FlatList
+              data={filteredDataSource}
+              renderItem={renderItem}
+              numColumns={numColumns}
+              keyExtractor={item => item.id}
+            />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </View>
+  );
+};
+
+export default ExploreItemScreen;

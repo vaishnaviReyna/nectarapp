@@ -64,11 +64,11 @@ const BasketScreen = ({navigation, route}) => {
         </View>
       </View>
       <Button title="Add To Basket" buttonStyle={styles.btnStyle} buttonPress={() => navigation.navigate('cart_screen',{
-        id:{id},
-        label:{label},
-        count:{count},
-        price:{price},
-        img:{img}
+        id:id,
+        label:label,
+        count:count,
+        price:price,
+        img:img
       })}/>
     </View>
   );

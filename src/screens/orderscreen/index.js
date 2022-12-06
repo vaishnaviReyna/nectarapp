@@ -18,7 +18,7 @@ const OrderScreen = ({navigation, route}) => {
       </View>
 
 
-      <View>
+      <View style={styles.bottom}>
       <Button title="Track Order" />
       <Button title="Back to home" buttonStyle={styles.btn} textStyle={styles.btnTitle} buttonPress={()=>navigation.navigate('home_screen')}/>
       </View>

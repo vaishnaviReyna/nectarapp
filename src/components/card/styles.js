@@ -1,14 +1,18 @@
 import {StyleSheet} from 'react-native';
 import colors from '../../constants/Colors';
 import FontSize from '../../constants/FontSize';
+import fonts from '../../constants/Fonts';
 
 const styles = StyleSheet.create({
   container:{
-    width:140,
+    width:152,
     paddingHorizontal:10,
     paddingVertical:5,
-    marginRight:25,
-    marginBottom:10,
+    marginHorizontal:8,
+    marginVertical:10,
+    borderWidth:1,
+    borderColor:colors.lightGray,
+    borderRadius:10,
   },
   logo:{
   alignItems:"center",
@@ -21,13 +25,14 @@ const styles = StyleSheet.create({
   },
   title:{
     marginVertical:4,
-    fontWeight:"bold",
+    // fontWeight:"bold",
+    fontFamily: fonts.primaryRegular,
     color:colors.black,
   },
   price:{
     fontSize:FontSize.medium,
     color:colors.black,
-    fontWeight:"bold",
+    fontFamily: fonts.primaryBold,  
   },
   plus:{
    paddingHorizontal:10,

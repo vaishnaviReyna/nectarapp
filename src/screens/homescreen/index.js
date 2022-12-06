@@ -4,6 +4,7 @@ import styles from './styles';
 import Images from '../../constants/Images';
 import {Exclusive,Groceries} from '../../constants/Data';
 import Card from '../../components/card';
+import Button from '../../components/button';
 
 
 const HomeScreen = ({navigation}) => {
@@ -12,19 +13,17 @@ const HomeScreen = ({navigation}) => {
 
   let numColumns=2;
   const renderItem = ({ item }) => (
-    <Card title={item.label} price={item.price} img={item.img} onpress={()=> abc(item)}/>
+    <Card title={item.label} price={item.price} img={item.img} onpress={()=>navigation.navigate('basket_screen',item)}/>
   );
 
-  const abc = (item) =>{
-    console.log("item",item);
-    navigation.navigate('basket_screen', item)}
 
   return (
     <View style={styles.mainContainer}>
       <SafeAreaView>
       <ScrollView>
         <View>
-          <Image source={Images.banner} />
+          {/* <Image source={Images.banner} /> */}
+          <Button title="explore In" buttonPress={() => navigation.navigate('explore_screen')}/>
         </View>
         <View>
           <View style={styles.itemTitle}>
