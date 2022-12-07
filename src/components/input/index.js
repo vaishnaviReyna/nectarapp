@@ -25,6 +25,7 @@ const Input = props => {
     onPressIn,
     numberOfLines,
     textAlignVertical,
+    keyboardType,
   } = props;
   return (
     <View style={[styles.mainContainer]}>
@@ -45,6 +46,7 @@ const Input = props => {
         multiline={multiline}
         numberOfLines={numberOfLines}
         textAlignVertical={textAlignVertical}
+        keyboardType={keyboardType}
       />
        {leftIcon !== '' && (
         <View style={[styles.leftIconContainer, icnsty]}>

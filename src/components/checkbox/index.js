@@ -5,7 +5,7 @@ import icons from '../../constants/Icons';
 import CheckBox from '@react-native-community/checkbox';
 
 const CheckBoxs = props => {
-  const {title,value,onValueChange} =
+  const {title,value,onValueChange,titleCol} =
     props;
   return (
     
@@ -15,7 +15,7 @@ const CheckBoxs = props => {
     value={value}
     onValueChange={onValueChange}
   />
-  <Text>{title}</Text>
+  <Text style={titleCol}>{title}</Text>
    </View>
   );
 };

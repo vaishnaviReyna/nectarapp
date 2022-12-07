@@ -5,9 +5,29 @@ import FontSize from '../../constants/FontSize';
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    paddingHorizontal:10,
+    paddingHorizontal:14,
     paddingVertical:5,
     position:"relative",
   },
+  withCol:{
+    // color:colors.black
+  },
+  gCol:{
+    color:colors.green
+  },
+  titles:{
+    color:colors.black,
+    fontSize:FontSize.medium,
+    marginTop:10,
+    marginBottom:8,
+    fontWeight:"bold",
+  },
+  btnStyles:{
+    position:"absolute",
+    bottom:10,
+    left:10,
+    right:10,
+  }
+
 });
 export default styles;

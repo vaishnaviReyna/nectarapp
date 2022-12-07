@@ -269,7 +269,7 @@ export const explore = [
   },
   {
     id: 4,
-    label: 'BAkery & Snacks',
+    label: 'Bakery & Snacks',
     img: require('../assets/images/bakery.png'),
     list: [
       {
@@ -391,8 +391,43 @@ export const filterCategories = [
     isSelected:false,
   },
   {
-    id: 3,
+    id: 4,
     label: 'Fast Food',
     isSelected:false,
   },
+];
+
+export const filterBrand = [
+  {
+    id: 1,
+    label: 'Indivual Callection',
+    isSelected:false,
+  },
+  {
+    id: 2,
+    label: 'cocacola',
+    isSelected:false,
+  },
+  {
+    id: 3,
+    label: 'ifad',
+    isSelected:false,
+  },
+  {
+    id: 4,
+    label: 'Kazi Farmas',
+    isSelected:false,
+  },
+];
+
+export const dropZone = [
+  { label: 'Aanand', value: '1' },
+  { label: 'vadodara', value: '2' },
+  { label: 'bharuch', value: '3' },
+];
+
+export const dropArea = [
+  { label: 'manjalpur', value: '1' },
+  { label: 'goatri', value: '2' },
+  { label: 'vasana', value: '3' },
 ];

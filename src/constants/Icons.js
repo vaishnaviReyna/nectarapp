@@ -11,10 +11,18 @@ const Icons = {
     gmin:require('../assets/icons/greenmin.png'),
     redHeart:require('../assets/icons/redHeart.png'),
     close:require('../assets/icons/close.png'),
+    closeB:require('../assets/icons/closeB.png'),
     pen:require('../assets/icons/pen.png'),
     search:require('../assets/icons/search.png'),
     backIcon:require('../assets/icons/backIcon.png'),
     filter:require('../assets/icons/filter.png'),
+    rightWarrow:require('../assets/icons/rightWarrow.png'),
+    upload:require('../assets/icons/upload.png'),
+
+    shop:require('../assets/icons/shop.png'),
+    heartB:require('../assets/icons/heartBlack.png'),
+    cart:require('../assets/icons/cart.png'),
+    user:require('../assets/icons/user.png'),
   };
 
   export default Icons;

@@ -15,8 +15,8 @@ const SigninScreen = ({navigation}) => {
      <Input leftIcon />
      <View style={styles.social}>
       <Text> Or connect with social media </Text>
-      <Button title="Countinue with Google" buttonStyle={styles.buttonGStyle} buttonPress={() => navigation.navigate('login_screen')}/>
-      <Button title="Countinue with Facebook"  buttonStyle={styles.buttonFStyle} buttonPress={() => navigation.navigate('login_screen')}/>
+      <Button title="Countinue with Google" buttonStyle={styles.buttonGStyle} buttonPress={() => navigation.navigate('number_screen')}/>
+      <Button title="Countinue with Facebook"  buttonStyle={styles.buttonFStyle} buttonPress={() => navigation.navigate('number_screen')}/>
      </View>
     </View>
     </ScrollView>

@@ -4,7 +4,7 @@ import {
   FlatList,
   Image,
   ScrollView,
-  Pressable
+  TouchableOpacity
 } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import styles from './styles';
@@ -14,13 +14,24 @@ import Input from '../../components/input';
 
 
 const ExploreItemScreen = ({navigation, route}) => {
-  const {list} = route.params;
+  const {list,label} = route.params;
+  console.log("l",route.params)
+  console.log("gfg",label);
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
 
 
   useEffect(() => {
     setFilteredDataSource(list);
+    navigation.setOptions({
+       title:label,
+       headerTitleAlign: 'center', 
+       headerRight: () => (
+        <TouchableOpacity onPress={()=> navigation.navigate('filter_screen')}>
+        <Image source={icons.filter} />
+      </TouchableOpacity>
+      ),
+});
   }, []);
 
   const searchFilterFunction = (text) => {
@@ -65,9 +76,6 @@ const ExploreItemScreen = ({navigation, route}) => {
         telcode=""
         style={styles.input}
         />
-        <Pressable onPress={()=>navigation.navigate('filter_screen',{newData:list})}>
-        <Image source={icons.filter} style={styles.logoFilter} />
-        </Pressable>
           <View>
             <FlatList
               data={filteredDataSource}

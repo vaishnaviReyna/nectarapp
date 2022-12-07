@@ -16,6 +16,8 @@ const CartScreen = ({navigation, route}) => {
     setModalVisible(!isModalVisible);
   };
 
+  
+
   return (
     <View style={styles.container}>
        <View>

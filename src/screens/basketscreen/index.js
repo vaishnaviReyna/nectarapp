@@ -8,6 +8,20 @@ const BasketScreen = ({navigation, route}) => {
   const {id, label, price, img} = route.params;
   const [heartTab, SetheartTab]=useState(false);
   const [count,setCount]=useState(1);
+
+  navigation.setOptions({
+    headerRight: () => (
+      <TouchableOpacity onPress={()=> navigation.navigate('cart_screen',{
+        id:id,
+        label:label,
+        count:count,
+        price:price,
+        img:img
+      })}>
+      <Image source={icons.upload} />
+    </TouchableOpacity>
+    ),
+  });
   return (
     <View style={styles.container}>
       <View style={styles.imgBlock}>

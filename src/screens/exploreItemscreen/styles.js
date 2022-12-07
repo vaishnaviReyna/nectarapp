@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
     position:"absolute",
     top:17,
     left:12,
-    
   },
   logoFilter:{
     position:"absolute",
@@ -23,6 +22,7 @@ const styles = StyleSheet.create({
     input: {
       borderBottomWidth: 0,
       paddingLeft: 35,
+      width:"70%",
     },
   
 });

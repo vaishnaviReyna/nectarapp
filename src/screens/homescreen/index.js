@@ -11,6 +11,10 @@ const HomeScreen = ({navigation}) => {
   const [extab, setExtab] = useState(true);
   const [groceriestab,setGroceriestab]=useState(true);
 
+  navigation.setOptions({
+    headerShown: false 
+});
+
   let numColumns=2;
   const renderItem = ({ item }) => (
     <Card title={item.label} price={item.price} img={item.img} onpress={()=>navigation.navigate('basket_screen',item)}/>
@@ -22,8 +26,7 @@ const HomeScreen = ({navigation}) => {
       <SafeAreaView>
       <ScrollView>
         <View>
-          {/* <Image source={Images.banner} /> */}
-          <Button title="explore In" buttonPress={() => navigation.navigate('explore_screen')}/>
+          <Image source={Images.banner} />
         </View>
         <View>
           <View style={styles.itemTitle}>

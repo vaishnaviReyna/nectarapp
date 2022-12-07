@@ -16,8 +16,6 @@ const OrderScreen = ({navigation, route}) => {
       <Text style={styles.subTitle}>Your items has been placcd and is on 
         it’s way to being processed</Text>
       </View>
-
-
       <View style={styles.bottom}>
       <Button title="Track Order" />
       <Button title="Back to home" buttonStyle={styles.btn} textStyle={styles.btnTitle} buttonPress={()=>navigation.navigate('home_screen')}/>
