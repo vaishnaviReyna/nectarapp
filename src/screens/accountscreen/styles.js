@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet,Dimensions} from 'react-native';
 import colors from '../../constants/Colors';
 import FontSize from '../../constants/FontSize';
 
@@ -45,16 +45,20 @@ const styles = StyleSheet.create({
     width: 200,
   },
   btnStyle: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.red,
   },
   textBtnStyle: {
     color: colors.green,
+    fontWeight:"bold",
+    fontSize:FontSize.medium-1,
   },
   backStyle: {
+    width:"60%",
+    flexDirection:"row",
+    justifyContent:"space-between",
     position: 'absolute',
+    paddingLeft:30,
     bottom: 25,
-    left: 35,
-    zIndex: 1,
   },
 });
 export default styles;

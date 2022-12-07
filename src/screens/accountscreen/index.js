@@ -1,4 +1,4 @@
-import {View, Text, FlatList, Image, TextInput} from 'react-native';
+import {View, Text, FlatList, Image, TextInput, Pressable} from 'react-native';
 import React, {useState} from 'react';
 import styles from './styles';
 import {account} from '../../constants/Data';
@@ -41,13 +41,13 @@ const AccountScreen = ({navigation}) => {
           keyExtractor={item => item.id}
         />
       </View>
-      <Image source={icons.backIcon} style={styles.backStyle} />
-      <Button
-        title="Log Out"
-        buttonStyle={styles.btnStyle}
-        textStyle={styles.textBtnStyle}
-        buttonPress={() => navigation.navigate('spalsh_screen')}
-      />
+      <View style={styles.backStyle}>
+      <Image source={icons.backIcon}  />
+      <Pressable onPress={() => navigation.navigate('spalsh_screen')}>
+        <Text style={styles.textBtnStyle}>Log Out</Text>
+      </Pressable>
+      </View>
+      
     </View>
   );
 };
