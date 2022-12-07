@@ -12,11 +12,13 @@ const LocationScreen = ({navigation, route}) => {
   console.log(dropZone);
   return (
     <View style={styles.container}>
-       <View style={styles.locoContainer} >
-      <Image source={Images.location}/>
-      <Text style={styles.title}>Select Your Location</Text>
-      <Text  style={styles.subTitle}>Swithch on your location to stay in tune with
-what’s happening in your area</Text>
+      <View style={styles.locoContainer}>
+        <Image source={Images.location} />
+        <Text style={styles.title}>Select Your Location</Text>
+        <Text style={styles.subTitle}>
+          Swithch on your location to stay in tune with what’s happening in your
+          area
+        </Text>
       </View>
       <View>
         <Text>Your Zone</Text>
@@ -40,7 +42,10 @@ what’s happening in your area</Text>
           }}
         />
       </View>
-      <Button title="Submit" buttonPress={() => navigation.navigate('login_screen')}/>
+      <Button
+        title="Submit"
+        buttonPress={() => navigation.navigate('login_screen')}
+      />
     </View>
   );
 };

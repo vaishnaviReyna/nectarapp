@@ -1,18 +1,19 @@
 import {StyleSheet} from 'react-native';
 import colors from '../../constants/Colors';
+
 const styles = StyleSheet.create({
-  selectedTextStyle:{
-    fontWeight:"bold",
+  selectedTextStyle: {
+    fontWeight: 'bold',
   },
-  placeholderStyle:{
-    color:colors.lightGray,
+  placeholderStyle: {
+    color: colors.lightGray,
   },
-  dropdown:{
+  dropdown: {
     height: 50,
-    borderColor:colors.lightGray,
+    borderColor: colors.lightGray,
     borderBottomWidth: 1,
     paddingHorizontal: 8,
-    marginBottom:30,
-  }
+    marginBottom: 30,
+  },
 });
 export default styles;

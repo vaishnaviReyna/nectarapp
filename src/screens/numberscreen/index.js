@@ -1,12 +1,5 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-  ScrollView,
-  Dimensions,
-} from 'react-native';
-import React, {useState} from 'react';
+import {View, Text, TouchableOpacity, Image, Dimensions} from 'react-native';
+import React from 'react';
 import styles from './styles';
 import icons from '../../constants/Icons';
 import Button from '../../components/button';

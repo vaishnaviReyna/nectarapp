@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   textStyle: {
-    fontSize: FontSize.small-2,
+    fontSize: FontSize.small - 2,
     color: colors.white,
     textAlign: 'center',
     fontWeight: '700',

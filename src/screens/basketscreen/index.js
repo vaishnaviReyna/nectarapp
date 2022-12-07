@@ -6,20 +6,23 @@ import Button from '../../components/button';
 
 const BasketScreen = ({navigation, route}) => {
   const {id, label, price, img} = route.params;
-  const [heartTab, SetheartTab]=useState(false);
-  const [count,setCount]=useState(1);
+  const [heartTab, SetheartTab] = useState(false);
+  const [count, setCount] = useState(1);
 
   navigation.setOptions({
     headerRight: () => (
-      <TouchableOpacity onPress={()=> navigation.navigate('cart_screen',{
-        id:id,
-        label:label,
-        count:count,
-        price:price,
-        img:img
-      })}>
-      <Image source={icons.upload} />
-    </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('cart_screen', {
+            id: id,
+            label: label,
+            count: count,
+            price: price,
+            img: img,
+          })
+        }>
+        <Image source={icons.upload} />
+      </TouchableOpacity>
     ),
   });
   return (
@@ -30,26 +33,25 @@ const BasketScreen = ({navigation, route}) => {
 
       <View style={styles.rowContainer}>
         <Text style={styles.title}>{label}</Text>
-        {!heartTab? (
+        {!heartTab ? (
           <TouchableOpacity onPress={() => SetheartTab(true)}>
             <Image source={icons.heart} />
           </TouchableOpacity>
         ) : (
           <TouchableOpacity onPress={() => SetheartTab(false)}>
-            <Image source={icons.redHeart} style={{width:25,height:25}} />
+            <Image source={icons.redHeart} style={{width: 25, height: 25}} />
           </TouchableOpacity>
         )}
       </View>
       <View style={styles.rowContainer}>
         <View style={styles.rowContainer}>
-          <TouchableOpacity onPress={()=>setCount(count-1)}>
-          <Image source={icons.gmin} style={[styles.logo,styles.logom]} />
+          <TouchableOpacity onPress={() => setCount(count - 1)}>
+            <Image source={icons.gmin} style={[styles.logo, styles.logom]} />
           </TouchableOpacity>
           <Text>{count}</Text>
-          <TouchableOpacity onPress={()=>setCount(count+1)}>
-          <Image source={icons.gplus} style={styles.logo} />
+          <TouchableOpacity onPress={() => setCount(count + 1)}>
+            <Image source={icons.gplus} style={styles.logo} />
           </TouchableOpacity>
-
         </View>
 
         <Text style={styles.title}>{price * count}</Text>
@@ -77,13 +79,19 @@ const BasketScreen = ({navigation, route}) => {
           <Image source={icons.rightArrow} style={styles.arrow} />
         </View>
       </View>
-      <Button title="Add To Basket" buttonStyle={styles.btnStyle} buttonPress={() => navigation.navigate('cart_screen',{
-        id:id,
-        label:label,
-        count:count,
-        price:price,
-        img:img
-      })}/>
+      <Button
+        title="Add To Basket"
+        buttonStyle={styles.btnStyle}
+        buttonPress={() =>
+          navigation.navigate('cart_screen', {
+            id: id,
+            label: label,
+            count: count,
+            price: price,
+            img: img,
+          })
+        }
+      />
     </View>
   );
 };

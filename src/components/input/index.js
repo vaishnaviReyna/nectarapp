@@ -1,10 +1,9 @@
 import React from 'react';
-import {View, TextInput,Image,Text} from 'react-native';
+import {View, TextInput, Image, Text} from 'react-native';
 import icons from '../../constants/Icons';
 import styles from './styles';
 
 const Input = props => {
-    
   const {
     telcode,
     placeholder,
@@ -29,14 +28,13 @@ const Input = props => {
   } = props;
   return (
     <View style={[styles.mainContainer]}>
-       
       <TextInput
         placeholder={placeholder}
         placeholderTextColor={placeholderColor}
         onChangeText={onChangeText}
         value={value}
         defaultValue={defaultValue}
-        style={[styles.inputContainer,style, {textAlign: 'left'}]}
+        style={[styles.inputContainer, style, {textAlign: 'left'}]}
         secureTextEntry={secureTextEntry}
         editable={editable}
         onPressIn={onPressIn}
@@ -48,14 +46,14 @@ const Input = props => {
         textAlignVertical={textAlignVertical}
         keyboardType={keyboardType}
       />
-       {leftIcon !== '' && (
+      {leftIcon !== '' && (
         <View style={[styles.leftIconContainer, icnsty]}>
           <Image source={icons.flag} />
         </View>
       )}
-       {telcode !== '' && (
-        <View  style={[styles.telCodeContainer, telsty]}>
-        <Text style={styles.title}>+880</Text>
+      {telcode !== '' && (
+        <View style={[styles.telCodeContainer, telsty]}>
+          <Text style={styles.title}>+880</Text>
         </View>
       )}
     </View>

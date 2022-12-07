@@ -378,22 +378,22 @@ export const filterCategories = [
   {
     id: 1,
     label: 'Eggs',
-    isSelected:false,
+    isSelected: false,
   },
   {
     id: 2,
     label: 'Noodles & pasta',
-    isSelected:false,
+    isSelected: false,
   },
   {
     id: 3,
     label: 'Chips & Crips',
-    isSelected:false,
+    isSelected: false,
   },
   {
     id: 4,
     label: 'Fast Food',
-    isSelected:false,
+    isSelected: false,
   },
 ];
 
@@ -401,33 +401,33 @@ export const filterBrand = [
   {
     id: 1,
     label: 'Indivual Callection',
-    isSelected:false,
+    isSelected: false,
   },
   {
     id: 2,
     label: 'cocacola',
-    isSelected:false,
+    isSelected: false,
   },
   {
     id: 3,
     label: 'ifad',
-    isSelected:false,
+    isSelected: false,
   },
   {
     id: 4,
     label: 'Kazi Farmas',
-    isSelected:false,
+    isSelected: false,
   },
 ];
 
 export const dropZone = [
-  { label: 'Aanand', value: '1' },
-  { label: 'vadodara', value: '2' },
-  { label: 'bharuch', value: '3' },
+  {label: 'Aanand', value: '1'},
+  {label: 'vadodara', value: '2'},
+  {label: 'bharuch', value: '3'},
 ];
 
 export const dropArea = [
-  { label: 'manjalpur', value: '1' },
-  { label: 'goatri', value: '2' },
-  { label: 'vasana', value: '3' },
+  {label: 'manjalpur', value: '1'},
+  {label: 'goatri', value: '2'},
+  {label: 'vasana', value: '3'},
 ];

@@ -3,32 +3,27 @@ import colors from '../../constants/Colors';
 import FontSize from '../../constants/FontSize';
 import fonts from '../../constants/Fonts';
 
-
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    paddingHorizontal:15,
-    // fontFamily: fonts.primaryRegular,
-
+    paddingHorizontal: 15,
   },
   title: {
-    fontSize: FontSize.medium +2,
+    fontSize: FontSize.medium + 2,
     color: colors.black,
-    fontWeight:"500",
+    fontWeight: '500',
     fontFamily: fonts.primaryRegular,
   },
-  subTitle:{
+  subTitle: {
     color: colors.green,
-    marginTop:5,
-    fontWeight:"bold",
+    marginTop: 5,
+    fontWeight: 'bold',
     fontFamily: fonts.primaryRegular,
   },
-  itemTitle:{
-    flexDirection:"row",
-    justifyContent:"space-between",
-    marginBottom:5,
-  
-  }
- 
+  itemTitle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 5,
+  },
 });
 export default styles;
