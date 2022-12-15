@@ -23,6 +23,8 @@ const Icons = {
     heartB:require('../assets/icons/heartBlack.png'),
     cart:require('../assets/icons/cart.png'),
     user:require('../assets/icons/user.png'),
+    camera:require('../assets/icons/camera.png'),
+    home:require('../assets/icons/home.png'),
   };
 
   export default Icons;

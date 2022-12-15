@@ -4,8 +4,17 @@ import Images from '../../constants/Images';
 import icons from '../../constants/Icons';
 import styles from './styles';
 import Button from '../../components/button';
+import {useSelector} from "react-redux";
+import auth from "@react-native-firebase/auth";
 
 const WlcomeScreen = ({navigation}) => {
+  const userinfo = useSelector((state)=>state.userReducer.lists)
+  console.log("userinfo from selector", userinfo);
+
+  const signOut = () => {
+    return auth().signOut()
+}
+
   return (
     <View style={styles.mainContainer}>
       <ImageBackground
@@ -14,14 +23,21 @@ const WlcomeScreen = ({navigation}) => {
         style={styles.bgImage}>
         <View style={styles.container}>
           <Image source={icons.logo} style={styles.logo} />
-          <Text style={styles.title}> Welcome{'\n'}to our store</Text>
+          <Text style={styles.title}> Welcome{'\n'}</Text>
           <Text style={styles.subTitle}>
-            Get your groceries in as fast as one hour
+          {`${userinfo.name}`}
           </Text>
+         
+
           <Button
-            title="Get Started"
+            title=" Go profile screen"
             buttonStyle={styles.buttonStyle}
-            buttonPress={() => navigation.navigate('signin_screen')}
+            buttonPress={() => navigation.navigate('account_screen')}
+          />
+           <Button
+            title="Sign out"
+            buttonStyle={styles.buttonStyle}
+            buttonPress={()=>signOut()}
           />
         </View>
       </ImageBackground>

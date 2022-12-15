@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+// import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import WlcomeScreen from '../screens/welcomescreen';
 import SigninScreen from '../screens/signinscreen';
@@ -15,13 +15,34 @@ import OrderScreen from '../screens/orderscreen';
 import ExploreItemScreen from '../screens/exploreItemscreen';
 import FilterScreen from '../screens/filterscreen';
 import styles from './styles';
+import AccountScreen from '../screens/accountscreen';
 
 const Stack = createNativeStackNavigator();
 const HomeNavigation = () => {
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="spalsh_screen">
+    // <NavigationContainer>
+      <Stack.Navigator>
+
+       <Stack.Screen
+          name="spalsh_screen"
+          component={SpalshScreen}
+          options={styles.splashStyle}
+        />
+
         <Stack.Screen
+          name="welcome_screen"
+          component={WlcomeScreen}
+          options={styles.splashStyle}
+        />
+
+        <Stack.Screen
+        name="account_screen"
+        component={AccountScreen}
+        options={styles.accountStyle}
+        />
+        
+        {/* <Stack.Screen
           name="spalsh_screen"
           component={SpalshScreen}
           options={styles.splashStyle}
@@ -50,8 +71,8 @@ const HomeNavigation = () => {
           name="location_screen"
           component={LocationScreen}
           options={styles.numberStyle}
-        />
-        <Stack.Screen
+        /> */}
+        {/* <Stack.Screen
           name="login_screen"
           component={LoginScreen}
           options={styles.splashStyle}
@@ -60,8 +81,8 @@ const HomeNavigation = () => {
           name="signup_screen"
           component={SignupScreen}
           options={styles.splashStyle}
-        />
-        <Stack.Screen
+        /> */}
+        {/* <Stack.Screen
           name="tab_screen"
           component={TabNavigation}
           options={styles.splashStyle}
@@ -77,9 +98,9 @@ const HomeNavigation = () => {
           options={styles.splashStyle}
         />
         <Stack.Screen name="exploreitem_screen" component={ExploreItemScreen} />
-        <Stack.Screen name="filter_screen" component={FilterScreen} />
+        <Stack.Screen name="filter_screen" component={FilterScreen} /> */}
       </Stack.Navigator>
-    </NavigationContainer>
+    // </NavigationContainer>
   );
 };
 

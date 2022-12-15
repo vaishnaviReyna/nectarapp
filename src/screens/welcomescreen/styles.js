@@ -29,9 +29,7 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     color: colors.white,
-  },
-  buttonStyle: {
-    marginTop: 40,
+    fontWeight: '500',
   },
 });
 export default styles;

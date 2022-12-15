@@ -6,8 +6,9 @@ const styles = StyleSheet.create({
   buttonStyle: {
     backgroundColor: colors.green,
     width: '100%',
-    padding: 15,
+    padding: 10,
     borderRadius: 15,
+    marginTop:20,
   },
   textStyle: {
     fontSize: FontSize.small - 2,

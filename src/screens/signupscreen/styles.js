@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   container: {
-    height: 150,
+    height: 90,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -37,12 +37,22 @@ const styles = StyleSheet.create({
   },
   bottomText: {
     flexDirection: 'row',
-    marginVertical: 15,
     justifyContent: 'center',
+  },
+  cameraText:{
+    flexDirection: 'row',
+    marginVertical: 15,
+    justifyContent:'space-between',
   },
   signText: {
     color: colors.green,
     marginLeft: 5,
+  },
+  tinyLogo: {
+    width: 50,
+    height: 50,
+    borderWidth:1,
+    borderRadius:20,
   },
 });
 export default styles;

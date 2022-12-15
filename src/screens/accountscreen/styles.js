@@ -5,30 +5,40 @@ import FontSize from '../../constants/FontSize';
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 10,
-    paddingVertical: 15,
+    paddingVertical: 25,
     flex: 1,
     backgroundColor: colors.white,
   },
   rowContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 15,
-    paddingVertical: 9,
-    borderBottomWidth: 1,
-    borderBottomColor: colors.lightGray,
+    marginBottom: 25,
   },
   rowStyle: {
     flexDirection: 'row',
   },
-  pen: {
-    marginTop: 5,
-    position: 'absolute',
-    right: 30,
+  containerImg:{
+    height:140,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
+ 
   rightName: {
     flexDirection: 'column',
     justifyContent: 'center',
     marginLeft: 15,
+  },
+  tinyLogo: {
+    width: 120,
+    height: 120,
+    borderWidth:1,
+    borderRadius:60,
+    borderColor:colors.black,
+  },
+  titleName:{
+fontWeight:"bold",
+fontSize:FontSize.large,
+marginRight:15,
   },
   userStyle: {
     marginBottom: 15,

@@ -33,9 +33,9 @@ const styles = StyleSheet.create({
     tabBarIcon: () => <Image source={icons.heartB} />,
   },
   accountStyle: {
-    headerShown: false,
-    tabBarLabel: 'Account',
-    tabBarIcon: () => <Image source={icons.user} />,
+    
+    headerTitle: 'Account',
+    headerTitleAlign: 'center',
   },
 });
 export default styles;
